@@ -3,6 +3,9 @@
 MASCA (Monoalphabetic Substiution Cipher Analyser)
 is a Rails based Web application for statistical frequency analysis
 of mono-alphabetic substitution ciphers. Wew.
+Even though Rails as a framework is overkill for such a static application,
+the main purpose serves as an (personal) introductory and first example to Rails (and Ruby),
+killing two birds with one stone. 
 
 ## Dependencies:
 Rails Version: 5.1.4
