@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Statistical Analysis</title>
+    <title><%= yield(:title) %> @ MASCA</title>
     <!--prevents cross-site request forgery-->
     <%= csrf_meta_tags %>
 
@@ -11,6 +11,34 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MASCA</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Analysis</a></li>
+            <li><a href="#">A Link</a></li>
+            <li><a href="#">in a Navi</a></li>
+            <li><a href="#">HAHa haha..</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Body -->
+    <div class="container center">
+      <h1>Monoalphabetic Substiution Cipher Analyser</h1>
+      <%= yield %>
+    </div>
   </body>
 </html>
