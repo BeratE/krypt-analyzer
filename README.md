@@ -8,8 +8,8 @@ the main purpose serves as an (personal) introductory and first example to Rails
 killing two birds with one stone. 
 
 ## Dependencies:
-Rails Version: 5.1.4
-Ruby Version: 2.3.1p112
+Rails Version: 5.1.4 </br>
+Ruby Version: 2.3.1p112 </br>
 SQLite Version: 3.11.0
 
 ## License:
