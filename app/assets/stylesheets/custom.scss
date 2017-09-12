@@ -1,0 +1,42 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* General Style */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 30px;
+  }
+}
+
+input {
+  height: auto !important;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  bottom: 0;
+  width: 100%;
+  margin-top: 45px;
+}
+
+/*& References to the parent element: &:hover*/
+/*variables: $light-gray: #777;*/

@@ -1,0 +1,127 @@
+<% provide(:title, "New Language") %>
+<div class="center">
+  <h1>Create a new language with its alphabetic frequency</h1>
+</div>
+<div class="row">
+  <%= form_for @langstat, url: langs_path(@langstat) do |f| %>
+     <%= f.label :Language %>
+     <%= f.text_field :language %>
+
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Letter</th>
+          <th>Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">A</th>
+          <td><%= f.text_field :A %></td>
+        </tr>
+        <tr>
+          <th scope="row">B</th>
+          <td><%= f.text_field :B %></td>
+        </tr>
+        <tr>
+          <th scope="row">C</th>
+          <td><%= f.text_field :C %></td>
+        </tr>
+        <tr>
+          <th scope="row">D</th>
+          <td><%= f.text_field :D %></td>
+        </tr>
+        <tr>
+          <th scope="row">E</th>
+          <td><%= f.text_field :E %></td>
+        </tr>
+        <tr>
+          <th scope="row">F</th>
+          <td><%= f.text_field :F %></td>
+        </tr>
+        <tr>
+          <th scope="row">G</th>
+          <td><%= f.text_field :G %></td>
+        </tr>
+        <tr>
+          <th scope="row">H</th>
+          <td><%= f.text_field :H %></td>
+        </tr>
+        <tr>
+          <th scope="row">I</th>
+          <td><%= f.text_field :I %></td>
+        </tr>
+        <tr>
+          <th scope="row">J</th>
+          <td><%= f.text_field :J %></td>
+        </tr>
+        <tr>
+          <th scope="row">K</th>
+          <td><%= f.text_field :K %></td>
+        </tr>
+        <tr>
+          <th scope="row">L</th>
+          <td><%= f.text_field :L %></td>
+        </tr>
+        <tr>
+          <th scope="row">M</th>
+          <td><%= f.text_field :M %></td>
+        </tr>
+        <tr>
+          <th scope="row">N</th>
+          <td><%= f.text_field :N %></td>
+        </tr>
+        <tr>
+          <th scope="row">O</th>
+          <td><%= f.text_field :O %></td>
+        </tr>
+        <tr>
+          <th scope="row">P</th>
+          <td><%= f.text_field :P %></td>
+        </tr>
+        <tr>
+          <th scope="row">Q</th>
+          <td><%= f.text_field :Q %></td>
+        </tr>
+        <tr>
+          <th scope="row">R</th>
+          <td><%= f.text_field :R %></td>
+        </tr>
+        <tr>
+          <th scope="row">S</th>
+          <td><%= f.text_field :S %></td>
+        </tr>
+        <tr>
+          <th scope="row">T</th>
+          <td><%= f.text_field :T %></td>
+        </tr>
+        <tr>
+          <th scope="row">U</th>
+          <td><%= f.text_field :U %></td>
+        </tr>
+        <tr>
+          <th scope="row">V</th>
+          <td><%= f.text_field :V %></td>
+        </tr>
+        <tr>
+          <th scope="row">W</th>
+          <td><%= f.text_field :W %></td>
+        </tr>
+        <tr>
+          <th scope="row">X</th>
+          <td><%= f.text_field :X %></td>
+        </tr>
+        <tr>
+          <th scope="row">Y</th>
+          <td><%= f.text_field :Y %></td>
+        </tr>
+        <tr>
+          <th scope="row">Z</th>
+          <td><%= f.text_field :Z %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <%= f.submit "Submit new Language", class: "btn btn-primary" %>
+   <% end %>
+</div>

@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#index'  
+  resources :langs
+
+  root 'application#index'
 end
