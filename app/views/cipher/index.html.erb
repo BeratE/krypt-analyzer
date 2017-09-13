@@ -1,0 +1,11 @@
+<div class="center">
+  <h1>Mono-Alphabetic Substitution Cipher Analyzer<h1>
+  <div class="row">
+    <%= form_tag url: cipher_path do %>
+      <div class="form-group">
+        <%= text_area_tag(:ciphertext, "ENTER THE ENCRYPTED MESSAGE", class: "form-control", rows: "12") %>
+      </div>
+      <%= submit_tag "Submit Cyphertext", class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
