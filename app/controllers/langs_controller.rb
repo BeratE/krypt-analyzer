@@ -10,7 +10,7 @@ class LangsController < ApplicationController
   def create
     @langstat = Langstat.new(params.require(:langstat).permit!)
     if @langstat.save
-      flash[:success] = "#{langstat.language} submitted!"
+      flash[:success] = "#{@langstat.language} submitted!"
       redirect_to langs_path
     else
       render 'new'

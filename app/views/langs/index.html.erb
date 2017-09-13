@@ -2,16 +2,31 @@
 <div class="center">
   <h1>Language Alphabetic Frequencies</h1>
   <p><%= link_to "New Language", new_lang_path%></p>
-  <div class="row">
-    <% unless @langstats.empty? %>
+</div>
+<div style="margin-left: -20%;">
+  <% unless @langstats.empty? %>
+    <table class="table table-bordered center">
+      <tr>
+        <th>Language</th>
+        <% ('A'..'Z').each do |sym| %>
+          <th><%= "#{sym}" %></th>
+        <% end %>
+      </tr>
       <% @langstats.each do |l| %>
-        <p> <% langstat.language %> </p>
+        <tr>
+          <td> <%= l.language %> </td>
+          <% l.attributes.each_pair do |name, value| %>
+            <% if ('A'..'Z').include?(name) then %>
+              <td> <%= "#{value/100.0}%" %> </td>
+            <% end %>
+          <% end %>
+        </tr>
       <% end %>
-      <% else %>
-        <p>
-          There are currently no statistics about languages registered.. </br>
-          To submit a new language statistic click on the "New Language" button above.
-        </p>
-    <% end %>
-  </div>
+    </table>
+    <% else %>
+      <p>
+        There are currently no statistics about languages registered.. </br>
+        To submit a new language statistic click on the "New Language" button above.
+      </p>
+  <% end %>
 </div>
