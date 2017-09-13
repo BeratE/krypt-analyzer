@@ -1,29 +1,29 @@
 class Langstat < ApplicationRecord
   validates :language, presence: true, length: { minimum: 3, maximum: 32 }, uniqueness: true
-  validates :A, presence: true
-  validates :B, presence: true
-  validates :C, presence: true
-  validates :D, presence: true
-  validates :E, presence: true 
-  validates :F, presence: true
-  validates :G, presence: true
-  validates :H, presence: true
-  validates :I, presence: true
-  validates :J, presence: true
-  validates :K, presence: true
-  validates :L, presence: true
-  validates :M, presence: true
-  validates :N, presence: true
-  validates :O, presence: true
-  validates :P, presence: true
-  validates :Q, presence: true
-  validates :R, presence: true
-  validates :S, presence: true
-  validates :T, presence: true
-  validates :U, presence: true
-  validates :V, presence: true
-  validates :W, presence: true
-  validates :X, presence: true
-  validates :Y, presence: true
-  validates :Z, presence: true
+  validates_numericality_of :A, :in => 0..10000
+  validates_numericality_of :B, :in => 0..10000
+  validates_numericality_of :C, :in => 0..10000
+  validates_numericality_of :D, :in => 0..10000
+  validates_numericality_of :E, :in => 0..10000
+  validates_numericality_of :F, :in => 0..10000
+  validates_numericality_of :G, :in => 0..10000
+  validates_numericality_of :H, :in => 0..10000
+  validates_numericality_of :I, :in => 0..10000
+  validates_numericality_of :J, :in => 0..10000
+  validates_numericality_of :K, :in => 0..10000
+  validates_numericality_of :L, :in => 0..10000
+  validates_numericality_of :M, :in => 0..10000
+  validates_numericality_of :N, :in => 0..10000
+  validates_numericality_of :O, :in => 0..10000
+  validates_numericality_of :P, :in => 0..10000
+  validates_numericality_of :Q, :in => 0..10000
+  validates_numericality_of :R, :in => 0..10000
+  validates_numericality_of :S, :in => 0..10000
+  validates_numericality_of :T, :in => 0..10000
+  validates_numericality_of :U, :in => 0..10000
+  validates_numericality_of :V, :in => 0..10000
+  validates_numericality_of :W, :in => 0..10000
+  validates_numericality_of :X, :in => 0..10000
+  validates_numericality_of :Y, :in => 0..10000
+  validates_numericality_of :Z, :in => 0..10000
 end

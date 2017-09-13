@@ -19,15 +19,15 @@ textarea {
   resize: vertical;
 }
 
+input {
+  height: auto !important;
+}
+
 .center {
   text-align: center;
   h1 {
     margin-bottom: 30px;
   }
-}
-
-input {
-  height: auto !important;
 }
 
 .debug_dump {

@@ -1,7 +1,30 @@
 <% provide(:title, "New Language") %>
 <div class="center">
   <h1>Create a new language with its alphabetic frequency</h1>
+  <p>
+    Input frequencies as 5 digit integers (without leading zeros) </br>
+    <small>17,04 = 1704, 6,5 = 650, 100 = 10000</small>
+  </p>
 </div>
+
+<% if @langstat.errors.any? %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= pluralize(@langstat.errors.count, "error") %> were raised!
+      </h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+      <% @langstat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+
 <div class="row">
   <%= form_for @langstat, url: langs_path(@langstat) do |f| %>
      <%= f.label :Language %>
