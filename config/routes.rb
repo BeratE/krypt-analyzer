@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'application#index'
 
   get '/cipher/index', to: 'cipher#index', as: 'cipher'
-  post '/cipher/index', to: 'cipher#create', as: 'cipher_create' 
+  post '/cipher/index', to: 'cipher#create', as: 'cipher_create'
+  post '/cipher/edit', to: 'cipher#edit'
 end

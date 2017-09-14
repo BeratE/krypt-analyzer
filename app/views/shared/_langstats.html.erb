@@ -1,0 +1,26 @@
+<div class="freqtable center">
+  <% unless @langstats.empty? %>
+    <table class="table table-bordered">
+      <tr>
+        <th>Language</th>
+        <% ('A'..'Z').each do |sym| %>
+          <th><%= "#{sym}" %></th>
+        <% end %>
+      </tr>
+      <% @langstats.each do |l| %>
+        <tr>
+          <td> <%= l.language %> </td>
+          <% l.attributes.each_pair do |name, value| %>
+            <% if ('A'..'Z').include?(name) then %>
+              <td> <%= '%.2f' % ((value.to_i)/100.0) %>% </td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <% else %>
+      <p>
+        There are currently no statistics about languages registered.. </br>
+      </p>
+  <% end %>
+</div>
