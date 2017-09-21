@@ -11,5 +11,12 @@ Rails Version: 5.1.4 </br>
 Ruby Version: 2.3.1p112 </br>
 SQLite Version: 3.11.0
 
+## Installation
+After installing all dependencies, clone the repository and start the Rails Server with
+```
+rails s
+``` 
+After that the application will be hosted on http://localhost:3000
+
 ## License
 The application is published under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.html).
