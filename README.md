@@ -12,7 +12,7 @@ Ruby Version: 2.3.1p112 </br>
 SQLite Version: 3.11.0
 
 ## Installation
-After installing all dependencies, clone the repository and start the Rails Server with
+After installing all dependencies, clone the repository, go to the application folder and start the rails server in the terminal with
 ```
 rails s
 ``` 
