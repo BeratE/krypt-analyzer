@@ -1,0 +1,76 @@
+<% provide(:title, "Analyze") %>
+<div class="center" id="langstats">
+  <div>
+    <h1>Mono-Alphabetic Substitution Cipher Analyzer</h1>
+  </div>
+  <div>
+    <label>Alphabetic Frequency of selected Language</label>
+    <div class="freqtable center">
+      <table class="table table-bordered">
+        <tr>
+          <th>Language</th>
+          <% @langstat.each do |key, value| %>
+            <th><%= key %></th>
+          <% end %>
+          </tr>
+          <tr>
+            <td>Selected</td>
+              <% @langstat.each do |key, value| %>
+              <td><%= '%.2f' % value %>%</td>
+            <% end %>
+          </tr>
+        </table>
+    </div>
+  </div>
+    <label>Alphabetic Frequency of Ciphertext</label>
+    <div class="freqtable center">
+      <table class="table table-bordered">
+        <tr>
+          <th>Language</th>
+          <% @cipherstat.each do |key, value| %>
+            <th><%= key %></th>
+          <% end %>
+          </tr>
+          <tr>
+            <td>Cipher</td>
+            <% @cipherstat.each do |key, value| %>
+              <td><%= '%.2f' % value %>%</td>
+            <% end %>
+          </tr>
+        </table>
+    </div>
+</div>
+<div class="center">
+  <label>Substitution</label>
+  <%= form_tag ("/cipher/edit") do %>
+    <table class="table table-bordered" id = "substable">
+      <tr>
+        <% ('A'..'Z').each do |a| %>
+          <th><%= a %></th>
+        <% end %>
+      </tr>
+      <tr>
+        <% if (@subs.nil?) then %>
+          <% ('A'..'Z').each do |a| %>
+            <td><%= text_field_tag(a, "#{a}", size:1, maxlength: 1) %></td>
+          <% end %>
+          <% else %>
+            <% @subs.each do |key, value| %>
+              <td><%= text_field_tag(key, "#{value}", size:1, maxlength: 1) %></td>
+            <% end %>
+        <% end %>
+      </tr>
+    </table>
+    <%= submit_tag("Substitute") %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-6 cipherbox paper" style="margin-left: -5%";>
+    <label>Ciphertext</label>
+    <p> <%= session[:ciphertext] %> </p>
+  </div>
+  <div class="col-md-6 cipherbox paper" style="margin-left: 5%;">
+    <label>Substitute</label>
+    <p> <%= @ciphertext %> </p>
+  </div>
+</div>

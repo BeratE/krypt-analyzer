@@ -4,45 +4,53 @@ class CipherController < ApplicationController
 
   def create
     @ciphertext = params[:ciphertext].to_s.upcase
-    @space = params[:c_space] #doesnt work quite wellllll.....
     if (@ciphertext.nil?) then
       flash[:warning] = "Please enter a ciphertext.."
       render 'index'
     else
       @cipherstat = equate_stat @ciphertext, @space
-      @langstats = Langstat.all
+      @langstat = lang_hash(params[:language][:id])
       session[:cipherstat] = @cipherstat
       session[:ciphertext] = @ciphertext
+      session[:lang_id] = params[:language][:id]
+      render 'decrypt'
     end
   end
 
   def edit
-    @langstats = Langstat.all
     @cipherstat = session[:cipherstat]
     @ciphertext = session[:ciphertext]
+    @langstat = lang_hash(session[:lang_id])
     @subs = Hash.new
     ('A'..'Z').each do |a|
-      @subs[a] = params[a]
-      @ciphertext = @ciphertext.gsub(a, @subs[a])
+      if (@subs[a] != params[a]) then
+        @subs[a] = params[a]
+        @ciphertext = @ciphertext.gsub(a, @subs[a])
+      end
     end
-    render 'create'
+    render 'decrypt'
   end
 
-  #returns a alphabetic frequncy hash [c|f] of a given text
   private
+  #returns a alphabetic frequncy hash [c|f] of a given text
   def equate_stat (text, space)
     stat = Hash.new
-    puts text
-    if (not space) then text.delete(' ') end
+    text = text.delete(' ').delete(',').delete('.').delete('!').delete('?')
     text.split("").each do |c|
       stat[c] = (stat[c].nil?) ? 1 : stat[c] + 1
     end
     ('A'..'Z').each do |a|
-      if (stat[a].nil?) then stat[a] = 0
-      else
-        stat[a] = ((stat[a] / 1.0) / text.length)
-      end
+      stat[a] = (stat[a].nil?) ? 0 : (((stat[a] / 1.0) / text.length) * 100)
     end
-    stat
+    stat.sort_by{ |key, value| value }.reverse
+  end
+
+  def lang_hash (id)
+    lang = Langstat.find(id)
+    langstat = Hash.new
+    ('A'..'Z').each do |a|
+      langstat[a] = (lang[a]/100.0)
+    end
+    langstat.sort_by{ |key, value| value}.reverse
   end
 end

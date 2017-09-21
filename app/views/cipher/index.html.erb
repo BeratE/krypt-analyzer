@@ -1,16 +1,15 @@
+<% provide(:title, "Analyze") %>
 <div class="center">
   <h1>Mono-Alphabetic Substitution Cipher Analyzer</h1>
-  <div class="row">
-    <%= form_tag url: cipher_path do %>
+  <div>
+    <%= form_tag ('/cipher/create') do %>
       <div class="form-group">
         <%= text_area_tag(:ciphertext, "ENTER THE ENCRYPTED MESSAGE", class: "form-control", rows: "12") %>
       </div>
-      <div class="form-group checkbox">
-        <label>
-          <%= check_box_tag :c_space %> Space is encrypted
-        </label>
+      <div class="form-group" style="float: left;">
+        <%= collection_select(:language, :id, Langstat.all, :id, :language) %>
       </div>
-      <%= submit_tag "Submit Cyphertext", class: "btn btn-default" %>
+      <%= submit_tag "Submit Cyphertext", class: "btn btn-default", style: "float: right;" %>
     <% end %>
   </div>
 </div>
